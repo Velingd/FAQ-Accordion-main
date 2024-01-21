@@ -1,0 +1,292 @@
+:root {
+    /* text */
+    --very-dark-desaturatedblue: hsl(238, 29%, 16%);
+    --soft-red: hsl(14, 88%, 65%);
+
+    /* gradients Background */
+
+    --soft-violet: hsl(273, 75%, 66%);
+    --soft-blue: hsl(240, 73%, 65%);
+
+    /* Text */ 
+
+    --very-dark-grayish-blue: hsl(237, 12%, 33%);
+    --dark-grayish-blue: hsl(240, 6%, 50%);
+
+    /* Deviders */
+
+    --light-grayish-blue: hsl(240, 5%, 91%);
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+h1,h1,h3 {
+    margin: 0;
+    padding: 0;
+}
+html {
+    font-size: 62.5%;
+}
+
+body {
+    font-size: 1.2rem;
+    font-family: 'Kumbh Sans', sans-serif;
+    background-image:linear-gradient(to bottom, var(--soft-violet), var(--soft-blue));
+    min-height: 100vh;
+    background-repeat: no-repeat;
+    display: grid;
+    align-items: center;
+}
+
+.card-container {
+    max-width: 92.1rem;
+    margin: auto;
+    background-color: #fff;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+    border-radius: 2.5rem;
+    /* overflow: hidden; */
+}
+
+.img-box {
+    align-self: center;
+    position: relative;
+    background-image:url('./images/illustration-woman-online-desktop.svg'), url('./images/bg-pattern-desktop.svg');
+    background-position:-7rem center, 112% 65%;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+    height: 100%;
+    z-index: 0;
+}
+
+
+.square {
+    width: 15rem;
+    height: 15rem;
+    position: absolute;
+    top: 42%;
+    left: -7rem;
+}
+
+/* content Box */
+
+.content-box {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 7rem 9.2rem 9.2rem 0;
+}
+
+.heading {
+    font-size: 3.2rem;
+    font-weight: 700;
+}
+
+.faq-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1.1rem;
+    /* padding: 1rem 0; */
+    cursor: pointer;
+    overflow: hidden;
+    z-index: 10;
+    border-bottom: 1px solid var(--light-grayish-blue);
+}
+
+.faq-heading.active {
+    border-bottom: none;
+}
+
+.faq-heading.active .question-icon {
+    transform: rotate(180deg);
+}
+
+.question {
+    font-size: 1.4rem;
+    font-weight: 700;
+    padding: 1rem 0;
+}
+
+.answar {
+    height: 0;
+    color: var(--dark-grayish-blue);
+    visibility: hidden;
+    opacity: 0;
+    transition:  all 0.2s;
+    border-bottom: 1px solid var(--light-grayish-blue);
+    padding: 1rem 0;
+}
+
+.faq-heading.active + .answar{
+    height: 6rem;
+    visibility: visible;
+    opacity: 1;
+}
+.mobile-img-box {
+    display: none;
+}
+
+/* media queries */
+/* 980px */
+@media(max-width:61.25em) {
+    .card-container {
+        margin:0 3rem;
+    }
+
+    .content-box {
+        padding: 5rem 5rem 5rem 0rem;
+    }
+
+    .img-box {
+        background-position:-7rem center, 110% 65%;
+    }
+}
+
+/* 930px */
+@media(max-width:58.12em) {
+    html {
+        font-size: 60%;
+    }
+    .img-box {
+        background-position:-7rem center, 104% 65%;
+    }
+}
+/* 850px */
+@media(max-width:53.125em) {
+    html {
+        font-size: 58%;
+    }
+    .img-box {
+        background-position:-7rem center, 98% 65%;
+    }
+
+    .content-box {
+        padding: 2rem;
+    }
+}
+
+/* 800px */
+@media(max-width:50em) {
+    html {
+        font-size: 62.5%;
+    }
+    .card-container {
+        grid-template-columns: auto;
+        margin-top: 23rem;
+    }
+
+    .img-box {
+        display: none;
+    }
+
+    .mobile-img-box {
+        display: block;
+        width: 60%;
+        position: absolute;
+        top: 2rem;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .mobile-img {
+        max-width:  100%;
+        display: block;
+        position: absolute;
+ 
+    }
+    .mobile-img-bg {
+        width: 100%;
+        display: block;
+        position: absolute;
+        top: 19rem;
+    }
+
+    .heading {
+        text-align: center;
+        margin-bottom: 6rem;
+    }
+
+    .content-box {
+        padding: 25rem 6rem 6rem 6rem;
+        
+    }
+}
+
+/* 600px */
+@media(max-width:37.5em) {
+    .card-container {
+        margin-top: 20rem;
+    }
+    .mobile-img-box {
+        
+        top: 4rem;
+    }
+
+    .mobile-img-bg { 
+        top: 15rem;
+    }
+
+    .content-box {
+        padding: 20rem 6rem 6rem 6rem;
+        
+    }
+}
+
+/* 530px */
+@media(max-width:33.125em) {
+    .mobile-img-box {
+        
+        top: 6rem;
+    }
+
+    .mobile-img-bg { 
+        top: 14rem;
+    }
+}
+/* 450px */
+@media(max-width:28.125em) {
+    .card-container {
+        margin-top: 2.5rem;
+    }
+    .mobile-img-box { 
+        top: 4.5rem;
+    }
+
+    .mobile-img-bg { 
+        top: 11.5rem;
+    }
+    .content-box {
+        padding: 15rem 2rem 2rem 2rem;
+        
+    }
+
+    .heading {
+        margin-bottom: 3rem;
+    }
+}
+
+/* 375px */
+@media(max-width:23.43em) {
+    .card-container {
+        margin-top: 2rem;
+    }
+    .mobile-img-box {
+        top: 6rem;
+    }
+
+    .mobile-img-bg { 
+        top: 10.4rem;
+    }
+}
+
+@media screen {
+    
+}
